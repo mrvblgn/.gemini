@@ -1,0 +1,56 @@
+# E2E Smoke Test Plan for BCSMS
+
+> **Error**: The browser environment could not be initialized because the `open_browser_url` tool failed with playwright driver installation 404 errors.
+
+- [ ] Step 1: Navigate to http://localhost:3000. Verify redirect to /login.
+- [ ] Step 2: Click "Vatandaş Kaydı Oluştur" to go to /register.
+- [ ] Step 3: Register a citizen:
+  - Adınız: "Hasan"
+  - Soyadınız: "Kaya"
+  - E-Posta: "hasan.kaya@bursa.bel.tr"
+  - Telefon: "5551234567"
+  - Şifre: "Password123!"
+  - Şifre Tekrarı: "Password123!"
+  - Click "Kayıt Ol" and wait for success redirect to /login.
+- [ ] Step 4: Login with citizen credentials:
+  - E-Posta: "hasan.kaya@bursa.bel.tr"
+  - Şifre: "Password123!"
+- [ ] Step 5: Verify redirect to /citizen. Click "Yeni Başvuru Yap" to go to /citizen/requests/new.
+- [ ] Step 6: Create new request:
+  - Başlık: "Nilüfer Ataevler Sokak Lambası Arızası"
+  - Hizmet Kategorisi: "Street Lighting and Electrical"
+  - Açıklama: "Sokak lambası 3 gündür yanmıyor, akşamları sokak karanlık kalıyor."
+  - Açık Adres: "Ataevler Mah. Barış Cad. No: 24 Nilüfer"
+  - Click "Başvuruyu Gönder".
+- [ ] Step 7: Verify redirect to /citizen/requests/:id, status chip shows "Yeni".
+- [ ] Step 8: Click "Çıkış".
+- [ ] Step 9: Login with Manager:
+  - E-Posta: "manager@bursa.bel.tr"
+  - Şifre: "Demo12345!"
+- [ ] Step 10: Go to "Başvurular" (/manager/requests).
+- [ ] Step 11: Find the request "Nilüfer Ataevler Sokak Lambası Arızası", click "İncele".
+- [ ] Step 12: On request details page:
+  - Click "İncelemeye Al". Verify status "İnceleniyor".
+  - Click "Görevi Ata". Dialog selection:
+    - Birim: "Fen İşleri"
+    - Personel: "Ahmet Usta (employee1@bursa.bel.tr)"
+    - Öncelik: "Yüksek"
+    - Click "Atamayı Tamamla".
+  - Verify status "Atandı".
+- [ ] Step 13: Click "Çıkış".
+- [ ] Step 14: Login with Employee:
+  - E-Posta: "employee1@bursa.bel.tr"
+  - Şifre: "Demo12345!"
+- [ ] Step 15: Go to "Görevlerim" (/employee/requests).
+- [ ] Step 16: Find request and click "Detay & İşlem".
+- [ ] Step 17: On request details page:
+  - Click "Çalışmayı Başlat (İşlemde Yap)". Verify status "İşlemde".
+  - Click "Çözümlendi Olarak İşaretle". Enter note "Lamba armatürü değiştirildi ve aydınlatma test edildi." and click "Çözümü Kaydet".
+  - Verify status "Çözüldü".
+- [ ] Step 18: Click "Çıkış".
+- [ ] Step 19: Login with Manager:
+  - E-Posta: "manager@bursa.bel.tr"
+  - Şifre: "Demo12345!"
+- [ ] Step 20: Go to "Başvurular", select resolved request.
+- [ ] Step 21: Click "Başvuruyu Kapat (Onayla)". Enter note "Yerinde kontrol edildi, aydınlatma faal." and click "Kapat ve Onayla".
+- [ ] Step 22: Verify status "Kapatıldı" and inspect timeline.

@@ -1,0 +1,16 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   111    0     0  100   111      0     74  0:00:01  0:00:01 --:--:--    74100   111    0     0  100   111      0     44  0:00:02  0:00:02 --:--:--    44100   111    0     0  100   111      0     31  0:00:03  0:00:03 --:--:--    31100   111    0     0  100   111      0     24  0:00:04  0:00:04 --:--:--    24100   111    0     0  100   111      0     22  0:00:05  0:00:05 --:--:--    22100   300    0   189  100   111     37     22  0:00:05  0:00:05 --:--:--    53
+HTTP/2 201 
+date: Thu, 20 Aug 2026 13:20:21 GMT
+content-type: application/json; charset=utf-8
+access-control-allow-origin: *
+rndr-id: 9e1977f7-f50b-44da
+server: cloudflare
+vary: Accept-Encoding
+x-render-origin-server: Kestrel
+cf-cache-status: DYNAMIC
+cf-ray: a2e1b1c82f339049-FRA
+alt-svc: h3=":443"; ma=86400
+
+{"id":"8bbaabc8-de11-453e-a26b-98621d4c8684","firstName":"ProdTest","lastName":"User","email":"prodtest_1787232016@bursa.bel.tr","role":"Citizen","createdAt":"2026-08-20T13:20:20.4070168Z"}

@@ -1,0 +1,40 @@
+Warning: formula.jws.json: update failed, falling back to cached version.
+Warning: cask.jws.json: update failed, falling back to cached version.
+Warning: formula_tap_migrations.jws.json: update failed, falling back to cached version.
+✔︎ JSON API formula_tap_migrations.jws.json
+✔︎ JSON API cask.jws.json
+Warning: cask_tap_migrations.jws.json: update failed, falling back to cached version.
+✔︎ JSON API formula.jws.json
+✔︎ JSON API cask.jws.json
+✔︎ JSON API cask_tap_migrations.jws.json
+==> maven: stable 3.9.12 (bottled)
+Java-based project management
+https://maven.apache.org/
+Conflicts with:
+  mvnvm (because both install `mvn` executables)
+Not installed
+From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/m/maven.rb
+License: Apache-2.0
+==> Dependencies
+Required: openjdk
+Error: Failure while executing; `/usr/bin/env /opt/homebrew/Library/Homebrew/shims/shared/curl --disable --cookie /dev/null --globoff --user-agent Homebrew/5.0.15\ \(Macintosh\;\ arm64\ Mac\ OS\ X\ 26.3.1\)\ curl/8.7.1 --header Accept-Language:\ en --fail --progress-bar --silent --remote-time --output /Users/mervebilgin/Library/Caches/Homebrew/api/formula/maven.json --location --disable --cookie /dev/null --globoff --show-error --user-agent Homebrew/5.0.15\ \(Macintosh\;\ arm64\ Mac\ OS\ X\ 26.3.1\)\ curl/8.7.1 --header Accept-Language:\ en --fail --progress-bar --silent --compressed --speed-limit 100 --speed-time 5 https://formulae.brew.sh/api/formula/maven.json` exited with 6. Here's the output:
+curl: (6) Could not resolve host: formulae.brew.sh
+==> openjdk@21: stable 21.0.10 (bottled) [keg-only]
+Development kit for the Java programming language
+https://openjdk.org/
+Not installed
+From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/o/openjdk@21.rb
+License: GPL-2.0-only WITH Classpath-exception-2.0
+==> Dependencies
+Build: autoconf, pkgconf
+Required: freetype, giflib, harfbuzz, jpeg-turbo, libpng, little-cms2
+==> Requirements
+Build: Xcode (on macOS)
+==> Caveats
+For the system Java wrappers to find this JDK, symlink it with
+  sudo ln -sfn /opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-21.jdk
+
+openjdk@21 is keg-only, which means it was not symlinked into /opt/homebrew,
+because this is an alternate version of another formula.
+Error: Failure while executing; `/usr/bin/env /opt/homebrew/Library/Homebrew/shims/shared/curl --disable --cookie /dev/null --globoff --user-agent Homebrew/5.0.15\ \(Macintosh\;\ arm64\ Mac\ OS\ X\ 26.3.1\)\ curl/8.7.1 --header Accept-Language:\ en --fail --progress-bar --silent --remote-time --output /Users/mervebilgin/Library/Caches/Homebrew/api/formula/openjdk@21.json --location --disable --cookie /dev/null --globoff --show-error --user-agent Homebrew/5.0.15\ \(Macintosh\;\ arm64\ Mac\ OS\ X\ 26.3.1\)\ curl/8.7.1 --header Accept-Language:\ en --fail --progress-bar --silent --compressed --speed-limit 100 --speed-time 5 https://formulae.brew.sh/api/formula/openjdk@21.json` exited with 6. Here's the output:
+curl: (6) Could not resolve host: formulae.brew.sh

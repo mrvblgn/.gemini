@@ -1,0 +1,5 @@
+{
+  "summary": "Walkthrough of the completed Java / Spring Boot 3 backend implementation for BCSMS in backend/java/bcsms-api/ including architecture, security, database migration, test results, omitted features, and local execution commands.",
+  "updatedAt": "2026-08-19T20:43:13.175822Z",
+  "userFacing": true
+}

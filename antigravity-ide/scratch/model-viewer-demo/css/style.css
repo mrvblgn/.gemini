@@ -1,0 +1,390 @@
+/* ==========================================================================
+   Model Viewer Demo - Stiller
+   Sadece sistem fontları kullanılmıştır. Harici tasarım bağımlılığı yoktur.
+   ========================================================================== */
+
+/* Temel Reset ve Değişkenler */
+:root {
+  --bg-color: #0f172a;
+  --card-bg: rgba(30, 41, 59, 0.7);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-color: #0ea5e9;
+  --accent-hover: #0284c7;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --radius-lg: 16px;
+  --radius-md: 8px;
+  --shadow-main: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  overflow-x: hidden; /* Mobil yatay taşma engelleme */
+  line-height: 1.5;
+}
+
+/* Ana Konteyner */
+.app-container {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Başlık */
+.app-header {
+  text-align: center;
+}
+
+.app-header h1 {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.app-header .subtitle {
+  color: var(--text-muted);
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  margin-top: 6px;
+}
+
+/* 3D Viewer Alanı */
+.viewer-container {
+  position: relative;
+  width: 100%;
+  height: clamp(350px, 60vh, 550px);
+  background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-main);
+  overflow: hidden;
+}
+
+model-viewer {
+  width: 100%;
+  height: 100%;
+  --poster-color: transparent;
+  outline: none;
+}
+
+/* Özel AR Butonu */
+.ar-button {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background-color: var(--accent-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  z-index: 10;
+}
+
+.ar-button:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.ar-button:active {
+  transform: translateY(0);
+}
+
+/* Progress Bar / Yükleme Göstergesi */
+.progress-bar-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-main);
+  min-width: 260px;
+  z-index: 5;
+}
+
+.progress-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: var(--accent-color);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.progress-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-grow: 1;
+}
+
+#progress-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.progress-track {
+  width: 100%;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--accent-color);
+  transition: width 0.2s ease;
+}
+
+/* Hotspot (Annotation) Stilleri */
+.hotspot {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.hotspot:hover {
+  transform: scale(1.15);
+  z-index: 20;
+}
+
+.hotspot-dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+.hotspot-label {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--card-border);
+  color: var(--text-main);
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.hotspot:hover .hotspot-label,
+.hotspot:focus .hotspot-label {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hotspot-label strong {
+  display: block;
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.hotspot-label p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Hata Mesajı Stili */
+.error-message {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  background-color: rgba(239, 68, 68, 0.95);
+  color: #ffffff;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-main);
+  z-index: 30;
+}
+
+/* AR Bilgilendirme Kartı */
+.ar-notice-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.notice-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.notice-content strong {
+  display: block;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.notice-content p {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Alt Test Paneli */
+.test-panel {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  font-size: 0.85rem;
+}
+
+.panel-header {
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 6px;
+}
+
+.panel-title {
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+}
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.panel-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.panel-item .label {
+  color: var(--text-muted);
+}
+
+.panel-item .value {
+  font-weight: 500;
+  color: #ffffff;
+  word-break: break-all;
+}
+
+/* Rozet Stilleri */
+.badge {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-pending {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: var(--warning-color);
+}
+
+.badge-success {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: var(--success-color);
+}
+
+.badge-error {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: var(--error-color);
+}
+
+/* Yardımcı Sınıflar */
+.hidden {
+  display: none !important;
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .ar-button {
+    bottom: 12px;
+    right: 12px;
+    padding: 10px 16px;
+    font-size: 0.875rem;
+  }
+
+  .hotspot-label {
+    white-space: normal;
+    min-width: 160px;
+  }
+
+  .panel-grid {
+    grid-template-columns: 1fr;
+  }
+}

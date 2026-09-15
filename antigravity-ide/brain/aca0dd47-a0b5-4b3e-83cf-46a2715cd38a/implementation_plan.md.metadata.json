@@ -1,0 +1,6 @@
+{
+  "summary": "Implementation plan for alternative Java / Spring Boot 3 backend implementation for BCSMS in backend/java/bcsms-api/ matching .NET domain concepts and specified MVP scope.",
+  "updatedAt": "2026-08-19T20:34:09.414816Z",
+  "requestFeedback": true,
+  "userFacing": true
+}

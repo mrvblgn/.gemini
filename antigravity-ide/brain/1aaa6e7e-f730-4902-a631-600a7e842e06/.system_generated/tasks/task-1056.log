@@ -1,0 +1,280 @@
+Derleniyor...
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      PRAGMA journal_mode = 'wal';
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "Categories" (
+          "Id" TEXT NOT NULL CONSTRAINT "PK_Categories" PRIMARY KEY,
+          "Name" TEXT NOT NULL,
+          "Description" TEXT NULL,
+          "IsActive" INTEGER NOT NULL,
+          "CreatedAt" TEXT NOT NULL,
+          "UpdatedAt" TEXT NULL
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "Departments" (
+          "Id" TEXT NOT NULL CONSTRAINT "PK_Departments" PRIMARY KEY,
+          "Name" TEXT NOT NULL,
+          "Description" TEXT NULL,
+          "IsActive" INTEGER NOT NULL,
+          "CreatedAt" TEXT NOT NULL,
+          "UpdatedAt" TEXT NULL
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "Users" (
+          "Id" TEXT NOT NULL CONSTRAINT "PK_Users" PRIMARY KEY,
+          "FirstName" TEXT NOT NULL,
+          "LastName" TEXT NOT NULL,
+          "Email" TEXT NOT NULL,
+          "PhoneNumber" TEXT NULL,
+          "PasswordHash" TEXT NOT NULL,
+          "Role" TEXT NOT NULL,
+          "DepartmentId" TEXT NULL,
+          "IsActive" INTEGER NOT NULL,
+          "CreatedAt" TEXT NOT NULL,
+          "UpdatedAt" TEXT NULL,
+          CONSTRAINT "FK_Users_Departments_DepartmentId" FOREIGN KEY ("DepartmentId") REFERENCES "Departments" ("Id") ON DELETE RESTRICT
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "ServiceRequests" (
+          "Id" TEXT NOT NULL CONSTRAINT "PK_ServiceRequests" PRIMARY KEY,
+          "Title" TEXT NOT NULL,
+          "Description" TEXT NULL,
+          "CategoryId" TEXT NOT NULL,
+          "Status" TEXT NOT NULL,
+          "Priority" TEXT NULL,
+          "Latitude" REAL NULL,
+          "Longitude" REAL NULL,
+          "AddressText" TEXT NULL,
+          "CitizenId" TEXT NOT NULL,
+          "AssignedDepartmentId" TEXT NULL,
+          "AssignedEmployeeId" TEXT NULL,
+          "CreatedAt" TEXT NOT NULL,
+          "UpdatedAt" TEXT NULL,
+          CONSTRAINT "FK_ServiceRequests_Categories_CategoryId" FOREIGN KEY ("CategoryId") REFERENCES "Categories" ("Id") ON DELETE RESTRICT,
+          CONSTRAINT "FK_ServiceRequests_Departments_AssignedDepartmentId" FOREIGN KEY ("AssignedDepartmentId") REFERENCES "Departments" ("Id") ON DELETE RESTRICT,
+          CONSTRAINT "FK_ServiceRequests_Users_AssignedEmployeeId" FOREIGN KEY ("AssignedEmployeeId") REFERENCES "Users" ("Id") ON DELETE RESTRICT,
+          CONSTRAINT "FK_ServiceRequests_Users_CitizenId" FOREIGN KEY ("CitizenId") REFERENCES "Users" ("Id") ON DELETE RESTRICT
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "Attachments" (
+          "Id" TEXT NOT NULL CONSTRAINT "PK_Attachments" PRIMARY KEY,
+          "ServiceRequestId" TEXT NOT NULL,
+          "FileName" TEXT NOT NULL,
+          "ContentType" TEXT NOT NULL,
+          "FileSizeInBytes" INTEGER NOT NULL,
+          "StoragePath" TEXT NOT NULL,
+          "UploadedByUserId" TEXT NOT NULL,
+          "UploadedAt" TEXT NOT NULL,
+          CONSTRAINT "FK_Attachments_ServiceRequests_ServiceRequestId" FOREIGN KEY ("ServiceRequestId") REFERENCES "ServiceRequests" ("Id") ON DELETE CASCADE,
+          CONSTRAINT "FK_Attachments_Users_UploadedByUserId" FOREIGN KEY ("UploadedByUserId") REFERENCES "Users" ("Id") ON DELETE RESTRICT
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "Comments" (
+          "Id" TEXT NOT NULL CONSTRAINT "PK_Comments" PRIMARY KEY,
+          "ServiceRequestId" TEXT NOT NULL,
+          "Content" TEXT NOT NULL,
+          "CreatedByUserId" TEXT NOT NULL,
+          "CreatedAt" TEXT NOT NULL,
+          CONSTRAINT "FK_Comments_ServiceRequests_ServiceRequestId" FOREIGN KEY ("ServiceRequestId") REFERENCES "ServiceRequests" ("Id") ON DELETE CASCADE,
+          CONSTRAINT "FK_Comments_Users_CreatedByUserId" FOREIGN KEY ("CreatedByUserId") REFERENCES "Users" ("Id") ON DELETE RESTRICT
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "StatusHistoryEntries" (
+          "Id" TEXT NOT NULL CONSTRAINT "PK_StatusHistoryEntries" PRIMARY KEY,
+          "ServiceRequestId" TEXT NOT NULL,
+          "OldStatus" TEXT NOT NULL,
+          "NewStatus" TEXT NOT NULL,
+          "Note" TEXT NULL,
+          "ChangedByUserId" TEXT NOT NULL,
+          "ChangedAt" TEXT NOT NULL,
+          CONSTRAINT "FK_StatusHistoryEntries_ServiceRequests_ServiceRequestId" FOREIGN KEY ("ServiceRequestId") REFERENCES "ServiceRequests" ("Id") ON DELETE CASCADE,
+          CONSTRAINT "FK_StatusHistoryEntries_Users_ChangedByUserId" FOREIGN KEY ("ChangedByUserId") REFERENCES "Users" ("Id") ON DELETE RESTRICT
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_Attachments_ServiceRequestId" ON "Attachments" ("ServiceRequestId");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_Attachments_UploadedByUserId" ON "Attachments" ("UploadedByUserId");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE UNIQUE INDEX "IX_Categories_Name" ON "Categories" ("Name");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_Comments_CreatedByUserId" ON "Comments" ("CreatedByUserId");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_Comments_ServiceRequestId" ON "Comments" ("ServiceRequestId");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE UNIQUE INDEX "IX_Departments_Name" ON "Departments" ("Name");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_ServiceRequests_AssignedDepartmentId" ON "ServiceRequests" ("AssignedDepartmentId");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_ServiceRequests_AssignedEmployeeId" ON "ServiceRequests" ("AssignedEmployeeId");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_ServiceRequests_CategoryId" ON "ServiceRequests" ("CategoryId");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_ServiceRequests_CitizenId" ON "ServiceRequests" ("CitizenId");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_ServiceRequests_CreatedAt" ON "ServiceRequests" ("CreatedAt");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_ServiceRequests_Status" ON "ServiceRequests" ("Status");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_StatusHistoryEntries_ChangedByUserId" ON "StatusHistoryEntries" ("ChangedByUserId");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_StatusHistoryEntries_ServiceRequestId" ON "StatusHistoryEntries" ("ServiceRequestId");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_Users_DepartmentId" ON "Users" ("DepartmentId");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE UNIQUE INDEX "IX_Users_Email" ON "Users" ("Email");
+info: BCSMS.Infrastructure.Persistence.Seeding.DbSeeder[0]
+      Starting development seed data initialization...
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@__dept_Id_0='?' (DbType = Guid), @__dept_Name_1='?' (Size = 10)], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Departments" AS "d"
+          WHERE "d"."Id" = @__dept_Id_0 OR "d"."Name" = @__dept_Name_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__dept_Id_0='?' (DbType = Guid), @__dept_Name_1='?' (Size = 16)], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Departments" AS "d"
+          WHERE "d"."Id" = @__dept_Id_0 OR "d"."Name" = @__dept_Name_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__dept_Id_0='?' (DbType = Guid), @__dept_Name_1='?' (Size = 15)], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Departments" AS "d"
+          WHERE "d"."Id" = @__dept_Id_0 OR "d"."Name" = @__dept_Name_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__dept_Id_0='?' (DbType = Guid), @__dept_Name_1='?' (Size = 6)], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Departments" AS "d"
+          WHERE "d"."Id" = @__dept_Id_0 OR "d"."Name" = @__dept_Name_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__cat_Id_0='?' (DbType = Guid), @__cat_Name_1='?' (Size = 17)], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Categories" AS "c"
+          WHERE "c"."Id" = @__cat_Id_0 OR "c"."Name" = @__cat_Name_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__cat_Id_0='?' (DbType = Guid), @__cat_Name_1='?' (Size = 30)], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Categories" AS "c"
+          WHERE "c"."Id" = @__cat_Id_0 OR "c"."Name" = @__cat_Name_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__cat_Id_0='?' (DbType = Guid), @__cat_Name_1='?' (Size = 18)], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Categories" AS "c"
+          WHERE "c"."Id" = @__cat_Id_0 OR "c"."Name" = @__cat_Name_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__cat_Id_0='?' (DbType = Guid), @__cat_Name_1='?' (Size = 21)], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Categories" AS "c"
+          WHERE "c"."Id" = @__cat_Id_0 OR "c"."Name" = @__cat_Name_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid), @__user_Contact_Email_1='?' (Size = 20)], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Users" AS "u"
+          WHERE "u"."Id" = @__user_Id_0 OR "u"."Email" = @__user_Contact_Email_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid), @__user_Contact_Email_1='?' (Size = 22)], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Users" AS "u"
+          WHERE "u"."Id" = @__user_Id_0 OR "u"."Email" = @__user_Contact_Email_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid), @__user_Contact_Email_1='?' (Size = 22)], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Users" AS "u"
+          WHERE "u"."Id" = @__user_Id_0 OR "u"."Email" = @__user_Contact_Email_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid), @__user_Contact_Email_1='?' (Size = 18)], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Users" AS "u"
+          WHERE "u"."Id" = @__user_Id_0 OR "u"."Email" = @__user_Contact_Email_1)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (Size = 37), @p3='?' (DbType = Boolean), @p4='?' (Size = 17), @p5='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Categories" ("Id", "CreatedAt", "Description", "IsActive", "Name", "UpdatedAt")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (Size = 40), @p3='?' (DbType = Boolean), @p4='?' (Size = 30), @p5='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Categories" ("Id", "CreatedAt", "Description", "IsActive", "Name", "UpdatedAt")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (Size = 37), @p3='?' (DbType = Boolean), @p4='?' (Size = 18), @p5='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Categories" ("Id", "CreatedAt", "Description", "IsActive", "Name", "UpdatedAt")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (Size = 60), @p3='?' (DbType = Boolean), @p4='?' (Size = 21), @p5='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Categories" ("Id", "CreatedAt", "Description", "IsActive", "Name", "UpdatedAt")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (Size = 29), @p3='?' (DbType = Boolean), @p4='?' (Size = 10), @p5='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Departments" ("Id", "CreatedAt", "Description", "IsActive", "Name", "UpdatedAt")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (Size = 38), @p3='?' (DbType = Boolean), @p4='?' (Size = 16), @p5='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Departments" ("Id", "CreatedAt", "Description", "IsActive", "Name", "UpdatedAt")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (Size = 32), @p3='?' (DbType = Boolean), @p4='?' (Size = 15), @p5='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Departments" ("Id", "CreatedAt", "Description", "IsActive", "Name", "UpdatedAt")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (Size = 47), @p3='?' (DbType = Boolean), @p4='?' (Size = 6), @p5='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Departments" ("Id", "CreatedAt", "Description", "IsActive", "Name", "UpdatedAt")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (DbType = Guid), @p3='?' (DbType = Boolean), @p4='?' (Size = 84), @p5='?' (Size = 5), @p6='?' (DbType = DateTime), @p7='?' (Size = 18), @p8='?' (Size = 10), @p9='?' (Size = 6), @p10='?' (Size = 10)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("Id", "CreatedAt", "DepartmentId", "IsActive", "PasswordHash", "Role", "UpdatedAt", "Email", "PhoneNumber", "FirstName", "LastName")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (DbType = Guid), @p3='?' (DbType = Boolean), @p4='?' (Size = 84), @p5='?' (Size = 7), @p6='?' (DbType = DateTime), @p7='?' (Size = 20), @p8='?' (Size = 10), @p9='?' (Size = 5), @p10='?' (Size = 6)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("Id", "CreatedAt", "DepartmentId", "IsActive", "PasswordHash", "Role", "UpdatedAt", "Email", "PhoneNumber", "FirstName", "LastName")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (DbType = Guid), @p3='?' (DbType = Boolean), @p4='?' (Size = 84), @p5='?' (Size = 8), @p6='?' (DbType = DateTime), @p7='?' (Size = 22), @p8='?' (Size = 10), @p9='?' (Size = 5), @p10='?' (Size = 4)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("Id", "CreatedAt", "DepartmentId", "IsActive", "PasswordHash", "Role", "UpdatedAt", "Email", "PhoneNumber", "FirstName", "LastName")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (DbType = Guid), @p3='?' (DbType = Boolean), @p4='?' (Size = 84), @p5='?' (Size = 8), @p6='?' (DbType = DateTime), @p7='?' (Size = 22), @p8='?' (Size = 10), @p9='?' (Size = 6), @p10='?' (Size = 8)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("Id", "CreatedAt", "DepartmentId", "IsActive", "PasswordHash", "Role", "UpdatedAt", "Email", "PhoneNumber", "FirstName", "LastName")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+info: BCSMS.Infrastructure.Persistence.Seeding.DbSeeder[0]
+      Development seed data initialization completed successfully.
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5123
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /Users/mervebilgin/BursaCityServiceManagement/backend/dotnet/src/BCSMS.API

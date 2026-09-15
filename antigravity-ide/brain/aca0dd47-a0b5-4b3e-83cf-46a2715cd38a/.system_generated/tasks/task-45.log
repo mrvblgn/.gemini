@@ -1,0 +1,409 @@
+==> Auto-updating Homebrew...
+Adjust how often this is run with `$HOMEBREW_AUTO_UPDATE_SECS` or disable with
+`$HOMEBREW_NO_AUTO_UPDATE=1`. Hide these hints with `$HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Downloading https://ghcr.io/v2/homebrew/core/portable-ruby/blobs/sha256:83a3ff85d83acf0e3dd8105de0fdb01da96b7c0eaf2dfaae2ba6500ec2ae4a64
+#=#=#                                                                          ##O#-#                                                                         ##O=#  #                                                                                                                                                  0.8%#                                                                          1.9%#####                                                                      7.4%#######################                                                   33.0%##################################################                        69.5%######################################################################## 100.0%
+==> Pouring portable-ruby-4.0.6.arm64_big_sur.bottle.tar.gz
+==> Downloading Homebrew API data
+✔︎ JSON API packages.arm64_tahoe.jws.json
+==> Downloading bottle manifests
+✔︎ Bottle Manifest maven (3.9.16)
+✔︎ Bottle Manifest openjdk@21 (21.0.12.1)
+==> Would install 2 formulae:
+maven openjdk@21
+==> Would install 2 dependencies for maven:
+json-c
+openjdk
+==> Would upgrade 19 dependencies for maven:
+libpng
+freetype
+giflib
+libunistring
+gettext
+fontconfig
+pcre2
+glib
+libx11
+libxext
+graphite2
+icu4c@78
+harfbuzz
+jpeg-turbo
+webp
+xz
+zstd
+libtiff
+little-cms2
+==> Would install 1 dependency for openjdk@21:
+json-c
+==> Would upgrade 19 dependencies for openjdk@21:
+libpng
+freetype
+giflib
+libunistring
+gettext
+fontconfig
+pcre2
+glib
+libx11
+libxext
+graphite2
+icu4c@78
+harfbuzz
+jpeg-turbo
+webp
+xz
+zstd
+libtiff
+little-cms2
+==> Fetching downloads for: maven and openjdk@21
+✔︎ Bottle Manifest libpng (1.6.58)
+✔︎ Bottle Manifest freetype (2.14.3)
+✔︎ Bottle Manifest giflib (6.1.3)
+✔︎ Bottle Manifest json-c (0.19)
+✔︎ Bottle Manifest libunistring (1.4.2)
+✔︎ Bottle Manifest gettext (1.0)
+✔︎ Bottle Manifest fontconfig (2.18.3)
+✔︎ Bottle giflib (6.1.3)
+✔︎ Bottle Manifest pcre2 (10.47_1)
+✔︎ Bottle json-c (0.19)
+✔︎ Bottle libpng (1.6.58)
+✔︎ Bottle freetype (2.14.3)
+✔︎ Bottle Manifest glib (2.88.3)
+✔︎ Bottle fontconfig (2.18.3)
+✔︎ Bottle Manifest libx11 (1.8.13)
+✔︎ Bottle Manifest libxext (1.3.7)
+✔︎ Bottle Manifest graphite2 (1.3.15)
+✔︎ Bottle Manifest icu4c@78 (78.3)
+✔︎ Bottle Manifest jpeg-turbo (3.2.0)
+✔︎ Bottle libxext (1.3.7)
+✔︎ Bottle Manifest harfbuzz (14.3.1)
+✔︎ Bottle pcre2 (10.47_1)
+✔︎ Bottle Manifest webp (1.6.0)
+✔︎ Bottle graphite2 (1.3.15)
+✔︎ Bottle Manifest xz (5.8.3)
+✔︎ Bottle Manifest zstd (1.5.7_1)
+✔︎ Bottle Manifest libtiff (4.7.2)
+✔︎ Bottle Manifest little-cms2 (2.19)
+✔︎ Bottle Manifest openjdk (26.0.2.1)
+✔︎ Bottle libunistring (1.4.2)
+✔︎ Bottle zstd (1.5.7_1)
+✔︎ Bottle little-cms2 (2.19)
+✔︎ Bottle xz (5.8.3)
+✔︎ Bottle libtiff (4.7.2)
+✔︎ Bottle webp (1.6.0)
+✔︎ Bottle gettext (1.0)
+✔︎ Bottle jpeg-turbo (3.2.0)
+✔︎ Bottle libx11 (1.8.13)
+✔︎ Bottle harfbuzz (14.3.1)
+✔︎ Bottle maven (3.9.16)
+✔︎ Bottle glib (2.88.3)
+✔︎ Bottle icu4c@78 (78.3)
+✔︎ Bottle openjdk@21 (21.0.12.1)
+✔︎ Bottle openjdk (26.0.2.1)
+==> Installing dependencies for maven: libpng, freetype, giflib, json-c, libunistring, gettext, pcre2, glib, libx11, libxext, icu4c@78, harfbuzz, jpeg-turbo, webp, xz, zstd, libtiff, little-cms2 and openjdk
+==> Upgrading maven dependency: libpng
+==> Pouring libpng--1.6.58.arm64_tahoe.bottle.tar.gz
+==> Caveats
+The following libpng executables are shadowed by other commands earlier in your PATH:
+  libpng-config (shadowed by /Users/mervebilgin/anaconda3/bin/libpng-config)
+  libpng16-config (shadowed by /Users/mervebilgin/anaconda3/bin/libpng16-config)
+  png-fix-itxt (shadowed by /Users/mervebilgin/anaconda3/bin/png-fix-itxt)
+  pngfix (shadowed by /Users/mervebilgin/anaconda3/bin/pngfix)
+Running these by name will not invoke the version provided by Homebrew.
+Disable this behaviour by setting `HOMEBREW_NO_PATH_SHADOW_CHECK=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Summary
+🍺  /opt/homebrew/Cellar/libpng/1.6.58: 28 files, 1.4MB
+==> Upgrading maven dependency: freetype
+==> Pouring freetype--2.14.3.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/freetype/2.14.3: 68 files, 2.7MB
+==> Upgrading maven dependency: giflib
+==> Pouring giflib--6.1.3.arm64_tahoe.bottle.tar.gz
+==> Caveats
+The following giflib executables are shadowed by other commands earlier in your PATH:
+  gifbuild (shadowed by /Users/mervebilgin/anaconda3/bin/gifbuild)
+  gifclrmp (shadowed by /Users/mervebilgin/anaconda3/bin/gifclrmp)
+  giffix (shadowed by /Users/mervebilgin/anaconda3/bin/giffix)
+  giftext (shadowed by /Users/mervebilgin/anaconda3/bin/giftext)
+  giftool (shadowed by /Users/mervebilgin/anaconda3/bin/giftool)
+Running these by name will not invoke the version provided by Homebrew.
+Disable this behaviour by setting `HOMEBREW_NO_PATH_SHADOW_CHECK=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Summary
+🍺  /opt/homebrew/Cellar/giflib/6.1.3: 19 files, 515.1KB
+==> Installing maven dependency: json-c
+==> Pouring json-c--0.19.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/json-c/0.19: 34 files, 360.5KB
+==> Upgrading maven dependency: libunistring
+==> Pouring libunistring--1.4.2.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libunistring/1.4.2: 59 files, 5.7MB
+==> Upgrading maven dependency: gettext
+==> Pouring gettext--1.0.arm64_tahoe.bottle.1.tar.gz
+🍺  /opt/homebrew/Cellar/gettext/1.0: 2,499 files, 34.9MB
+==> Upgrading maven dependency: pcre2
+==> Pouring pcre2--10.47_1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/pcre2/10.47_1: 244 files, 7.2MB
+==> Upgrading maven dependency: glib
+==> Pouring glib--2.88.3.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/glib/2.88.3: 501 files, 39.6MB
+==> Upgrading maven dependency: libx11
+==> Pouring libx11--1.8.13.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libx11/1.8.13: 1,043 files, 7.3MB
+==> Upgrading maven dependency: libxext
+==> Pouring libxext--1.3.7.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libxext/1.3.7: 88 files, 448.8KB
+==> Upgrading maven dependency: icu4c@78
+==> Pouring icu4c@78--78.3.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/icu4c@78/78.3: 279 files, 87.5MB
+==> Upgrading maven dependency: harfbuzz
+==> Installing dependencies for harfbuzz: fontconfig and graphite2
+==> Upgrading harfbuzz dependency: fontconfig
+==> Pouring fontconfig--2.18.3.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/fontconfig/2.18.3: 102 files, 1.9MB
+==> Upgrading harfbuzz dependency: graphite2
+==> Pouring graphite2--1.3.15.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/graphite2/1.3.15: 19 files, 257.1KB
+==> Installing harfbuzz
+==> Pouring harfbuzz--14.3.1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/harfbuzz/14.3.1: 96 files, 13.3MB
+==> Upgrading maven dependency: jpeg-turbo
+==> Pouring jpeg-turbo--3.2.0.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/jpeg-turbo/3.2.0: 47 files, 4.2MB
+==> Upgrading maven dependency: webp
+==> Pouring webp--1.6.0.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/webp/1.6.0: 64 files, 2.5MB
+==> Upgrading maven dependency: xz
+==> Pouring xz--5.8.3.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/xz/5.8.3: 96 files, 2.6MB
+==> Upgrading maven dependency: zstd
+==> Pouring zstd--1.5.7_1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/zstd/1.5.7_1: 32 files, 2.3MB
+==> Upgrading maven dependency: libtiff
+==> Pouring libtiff--4.7.2.arm64_tahoe.bottle.1.tar.gz
+🍺  /opt/homebrew/Cellar/libtiff/4.7.2: 493 files, 9.0MB
+==> Upgrading maven dependency: little-cms2
+==> Pouring little-cms2--2.19.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/little-cms2/2.19: 23 files, 1.4MB
+==> Installing maven dependency: openjdk
+==> Pouring openjdk--26.0.2.1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/openjdk/26.0.2.1: 549 files, 397.6MB
+==> Installing maven
+==> Pouring maven--3.9.16.all.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/maven/3.9.16: 100 files, 10.9MB
+==> Running `brew cleanup maven`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+Warning: openjdk@21 was installed but not linked because openjdk and openjdk@17 are already installed.
+To link this version, run:
+  brew link openjdk@21
+==> Pouring openjdk@21--21.0.12.1.arm64_tahoe.bottle.tar.gz
+==> Caveats
+For the system Java wrappers to find this JDK, symlink it with
+  sudo ln -sfn /opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-21.jdk
+
+openjdk@21 is keg-only, which means it was not symlinked into /opt/homebrew,
+because this is an alternate version of another formula.
+
+If you need to have openjdk@21 first in your PATH, run:
+  echo 'export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"' >> ~/.zshrc
+
+For compilers to find openjdk@21 you may need to set:
+  export CPPFLAGS="-I/opt/homebrew/opt/openjdk@21/include"
+
+The following openjdk@21 executables are shadowed by other linked Homebrew commands:
+  jar (shadowed by /opt/homebrew/opt/openjdk@17/bin/jar from openjdk@17)
+  jarsigner (shadowed by /opt/homebrew/opt/openjdk@17/bin/jarsigner from openjdk@17)
+  java (shadowed by /opt/homebrew/opt/openjdk@17/bin/java from openjdk@17)
+  javac (shadowed by /opt/homebrew/opt/openjdk@17/bin/javac from openjdk@17)
+  javadoc (shadowed by /opt/homebrew/opt/openjdk@17/bin/javadoc from openjdk@17)
+  javap (shadowed by /opt/homebrew/opt/openjdk@17/bin/javap from openjdk@17)
+  jcmd (shadowed by /opt/homebrew/opt/openjdk@17/bin/jcmd from openjdk@17)
+  jconsole (shadowed by /opt/homebrew/opt/openjdk@17/bin/jconsole from openjdk@17)
+  jdb (shadowed by /opt/homebrew/opt/openjdk@17/bin/jdb from openjdk@17)
+  jdeprscan (shadowed by /opt/homebrew/opt/openjdk@17/bin/jdeprscan from openjdk@17)
+  jdeps (shadowed by /opt/homebrew/opt/openjdk@17/bin/jdeps from openjdk@17)
+  jfr (shadowed by /opt/homebrew/opt/openjdk@17/bin/jfr from openjdk@17)
+  jhsdb (shadowed by /opt/homebrew/opt/openjdk@17/bin/jhsdb from openjdk@17)
+  jimage (shadowed by /opt/homebrew/opt/openjdk@17/bin/jimage from openjdk@17)
+  jinfo (shadowed by /opt/homebrew/opt/openjdk@17/bin/jinfo from openjdk@17)
+  jlink (shadowed by /opt/homebrew/opt/openjdk@17/bin/jlink from openjdk@17)
+  jmap (shadowed by /opt/homebrew/opt/openjdk@17/bin/jmap from openjdk@17)
+  jmod (shadowed by /opt/homebrew/opt/openjdk@17/bin/jmod from openjdk@17)
+  jpackage (shadowed by /opt/homebrew/opt/openjdk@17/bin/jpackage from openjdk@17)
+  jps (shadowed by /opt/homebrew/opt/openjdk@17/bin/jps from openjdk@17)
+  jrunscript (shadowed by /opt/homebrew/opt/openjdk@17/bin/jrunscript from openjdk@17)
+  jshell (shadowed by /opt/homebrew/opt/openjdk@17/bin/jshell from openjdk@17)
+  jstack (shadowed by /opt/homebrew/opt/openjdk@17/bin/jstack from openjdk@17)
+  jstat (shadowed by /opt/homebrew/opt/openjdk@17/bin/jstat from openjdk@17)
+  jstatd (shadowed by /opt/homebrew/opt/openjdk@17/bin/jstatd from openjdk@17)
+  keytool (shadowed by /opt/homebrew/opt/openjdk@17/bin/keytool from openjdk@17)
+  rmiregistry (shadowed by /opt/homebrew/opt/openjdk@17/bin/rmiregistry from openjdk@17)
+  serialver (shadowed by /opt/homebrew/opt/openjdk@17/bin/serialver from openjdk@17)
+Running these by name will not invoke the version provided by this formula.
+Run `brew link openjdk@21` to switch the active version to this keg.
+Disable this behaviour by setting `HOMEBREW_NO_PATH_SHADOW_CHECK=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Summary
+🍺  /opt/homebrew/Cellar/openjdk@21/21.0.12.1: 599 files, 346.7MB
+==> Running `brew cleanup openjdk@21`...
+==> `brew cleanup` has not been run in the last 30 days, running now...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/brotli--1.2.0... (794.0KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/brotli_bottle_manifest--1.2.0... (8.0KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/c-ares--1.34.5... (303.6KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/c-ares_bottle_manifest--1.34.5-1... (9.8KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/ca-certificates--2025-12-02... (131.8KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/ca-certificates_bottle_manifest--2025-12-02... (2KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/cairo--1.18.4... (1.6MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/cairo_bottle_manifest--1.18.4-1... (37KB)
+Removing: /opt/homebrew/Cellar/fontconfig/2.17.1... (98 files, 1.6MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/fontconfig--2.17.1... (400.1KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/fontconfig_bottle_manifest--2.17.1-1... (17.3KB)
+Removing: /opt/homebrew/Cellar/freetype/2.14.1_1... (68 files, 2.7MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/freetype--2.14.1_1... (991KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/freetype_bottle_manifest--2.14.1_1... (9.2KB)
+Removing: /opt/homebrew/Cellar/gettext/0.26_1... (2,428 files, 29.5MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/gettext--0.26_1... (9.6MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/gettext_bottle_manifest--0.26_1... (13.8KB)
+Removing: /opt/homebrew/Cellar/giflib/5.2.2... (20 files, 560.1KB)
+Removing: /opt/homebrew/Cellar/glib/2.86.3... (504 files, 39.6MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/glib--2.86.3... (9.2MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/glib_bottle_manifest--2.86.3... (20.2KB)
+Removing: /opt/homebrew/Cellar/graphite2/1.3.14... (18 files, 288.6KB)
+Removing: /opt/homebrew/Cellar/harfbuzz/12.3.0... (77 files, 12.4MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/harfbuzz--12.3.0... (3.3MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/harfbuzz_bottle_manifest--12.3.0... (29.9KB)
+Removing: /opt/homebrew/Cellar/icu4c@78/78.1... (279 files, 88.0MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/icu4c@78--78.1... (32.0MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/icu4c@78_bottle_manifest--78.1... (9.7KB)
+Removing: /opt/homebrew/Cellar/jpeg-turbo/3.1.3... (47 files, 3.7MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/jpeg-turbo--3.1.3... (1MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/jpeg-turbo_bottle_manifest--3.1.3... (8.3KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/libnghttp2--1.68.0... (221.5KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/libnghttp2_bottle_manifest--1.68.0... (7.3KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/libnghttp3--1.13.1... (188.2KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/libnghttp3_bottle_manifest--1.13.1... (7.3KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/libngtcp2--1.18.0... (407.6KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/libngtcp2_bottle_manifest--1.18.0... (9.3KB)
+Removing: /opt/homebrew/Cellar/libpng/1.6.53... (28 files, 1.4MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/libpng--1.6.53... (459KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/libpng_bottle_manifest--1.6.53... (8.5KB)
+Removing: /opt/homebrew/Cellar/libtiff/4.7.1... (488 files, 9.0MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/libtiff--4.7.1... (1.9MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/libtiff_bottle_manifest--4.7.1... (12.5KB)
+Removing: /opt/homebrew/Cellar/libunistring/1.4.1... (59 files, 5.8MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/libunistring--1.4.1... (1.9MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/libunistring_bottle_manifest--1.4.1... (7.3KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/libuv--1.51.0... (370KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/libuv_bottle_manifest--1.51.0-1... (9.6KB)
+Removing: /opt/homebrew/Cellar/libx11/1.8.12... (1,043 files, 7.4MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/libx11--1.8.12... (2.3MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/libx11_bottle_manifest--1.8.12... (18.3KB)
+Removing: /opt/homebrew/Cellar/libxext/1.3.6... (88 files, 469.4KB)
+Removing: /opt/homebrew/Cellar/little-cms2/2.17... (23 files, 1.5MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/node--25.2.1... (20.5MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/node_bottle_manifest--25.2.1... (24KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/openjdk@17--17.0.17... (186.1MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/openjdk@17_bottle_manifest--17.0.17... (39.6KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/openssl@3--3.6.0... (10.9MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/openssl@3_bottle_manifest--3.6.0... (11.8KB)
+Removing: /opt/homebrew/Cellar/pcre2/10.47... (244 files, 7.3MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/pcre2--10.47... (2.4MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/pcre2_bottle_manifest--10.47... (10.4KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/pixman--0.46.4... (416.2KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/pixman_bottle_manifest--0.46.4-1... (9.3KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/pkgconf--2.5.1... (121.7KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/pkgconf_bottle_manifest--2.5.1... (12.2KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/readline--8.3.1... (761.7KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/readline_bottle_manifest--8.3.1... (12.3KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/simdjson--4.2.2... (1.2MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/simdjson_bottle_manifest--4.2.2-2... (7.4KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/sqlite--3.51.1... (2.4MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/sqlite_bottle_manifest--3.51.1... (11.4KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/uvwasi--0.0.23... (72.5KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/uvwasi_bottle_manifest--0.0.23-1... (8.3KB)
+Removing: /opt/homebrew/Cellar/webp/1.5.0... (64 files, 2.7MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/xorgproto--2025.1... (720KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/xorgproto_bottle_manifest--2025.1... (13.1KB)
+Removing: /opt/homebrew/Cellar/xz/5.8.1... (96 files, 2.6MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/xz--5.8.1... (748.1KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/xz--5.8.2... (764.3KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/xz_bottle_manifest--5.8.1... (14.5KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/xz_bottle_manifest--5.8.2... (11.8KB)
+Removing: /opt/homebrew/Cellar/zstd/1.5.7... (32 files, 2.3MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/portable-ruby-3.4.8.arm64_big_sur.bottle.tar.gz... (12.2MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/external_commands_list.txt... (1B)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/all_commands_list.txt... (1.3KB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/bootsnap/3f9aa844ce6daa83be4a0faaf7be6f4595fdf4b98f8be6536d9524120f6eec81... (642 files, 5.7MB)
+Removing: /Users/mervebilgin/Library/Caches/Homebrew/bootsnap/684c26d8211c6bacd91f8187e94767537f4d3bb555c2f7d7d582cc7ad2221890... (648 files, 5.7MB)
+Removing: /Users/mervebilgin/Library/Logs/Homebrew/glib... (64B)
+Removing: /Users/mervebilgin/Library/Logs/Homebrew/fontconfig... (1.7KB)
+Pruned 0 symbolic links and 2 directories from /opt/homebrew
+==> Caveats
+==> libpng
+The following libpng executables are shadowed by other commands earlier in your PATH:
+  libpng-config (shadowed by /Users/mervebilgin/anaconda3/bin/libpng-config)
+  libpng16-config (shadowed by /Users/mervebilgin/anaconda3/bin/libpng16-config)
+  png-fix-itxt (shadowed by /Users/mervebilgin/anaconda3/bin/png-fix-itxt)
+  pngfix (shadowed by /Users/mervebilgin/anaconda3/bin/pngfix)
+Running these by name will not invoke the version provided by Homebrew.
+Disable this behaviour by setting `HOMEBREW_NO_PATH_SHADOW_CHECK=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> giflib
+The following giflib executables are shadowed by other commands earlier in your PATH:
+  gifbuild (shadowed by /Users/mervebilgin/anaconda3/bin/gifbuild)
+  gifclrmp (shadowed by /Users/mervebilgin/anaconda3/bin/gifclrmp)
+  giffix (shadowed by /Users/mervebilgin/anaconda3/bin/giffix)
+  giftext (shadowed by /Users/mervebilgin/anaconda3/bin/giftext)
+  giftool (shadowed by /Users/mervebilgin/anaconda3/bin/giftool)
+Running these by name will not invoke the version provided by Homebrew.
+Disable this behaviour by setting `HOMEBREW_NO_PATH_SHADOW_CHECK=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> openjdk@21
+For the system Java wrappers to find this JDK, symlink it with
+  sudo ln -sfn /opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-21.jdk
+
+openjdk@21 is keg-only, which means it was not symlinked into /opt/homebrew,
+because this is an alternate version of another formula.
+
+If you need to have openjdk@21 first in your PATH, run:
+  echo 'export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"' >> ~/.zshrc
+
+For compilers to find openjdk@21 you may need to set:
+  export CPPFLAGS="-I/opt/homebrew/opt/openjdk@21/include"
+
+The following openjdk@21 executables are shadowed by other linked Homebrew commands:
+  jar (shadowed by /opt/homebrew/opt/openjdk@17/bin/jar from openjdk@17)
+  jarsigner (shadowed by /opt/homebrew/opt/openjdk@17/bin/jarsigner from openjdk@17)
+  java (shadowed by /opt/homebrew/opt/openjdk@17/bin/java from openjdk@17)
+  javac (shadowed by /opt/homebrew/opt/openjdk@17/bin/javac from openjdk@17)
+  javadoc (shadowed by /opt/homebrew/opt/openjdk@17/bin/javadoc from openjdk@17)
+  javap (shadowed by /opt/homebrew/opt/openjdk@17/bin/javap from openjdk@17)
+  jcmd (shadowed by /opt/homebrew/opt/openjdk@17/bin/jcmd from openjdk@17)
+  jconsole (shadowed by /opt/homebrew/opt/openjdk@17/bin/jconsole from openjdk@17)
+  jdb (shadowed by /opt/homebrew/opt/openjdk@17/bin/jdb from openjdk@17)
+  jdeprscan (shadowed by /opt/homebrew/opt/openjdk@17/bin/jdeprscan from openjdk@17)
+  jdeps (shadowed by /opt/homebrew/opt/openjdk@17/bin/jdeps from openjdk@17)
+  jfr (shadowed by /opt/homebrew/opt/openjdk@17/bin/jfr from openjdk@17)
+  jhsdb (shadowed by /opt/homebrew/opt/openjdk@17/bin/jhsdb from openjdk@17)
+  jimage (shadowed by /opt/homebrew/opt/openjdk@17/bin/jimage from openjdk@17)
+  jinfo (shadowed by /opt/homebrew/opt/openjdk@17/bin/jinfo from openjdk@17)
+  jlink (shadowed by /opt/homebrew/opt/openjdk@17/bin/jlink from openjdk@17)
+  jmap (shadowed by /opt/homebrew/opt/openjdk@17/bin/jmap from openjdk@17)
+  jmod (shadowed by /opt/homebrew/opt/openjdk@17/bin/jmod from openjdk@17)
+  jpackage (shadowed by /opt/homebrew/opt/openjdk@17/bin/jpackage from openjdk@17)
+  jps (shadowed by /opt/homebrew/opt/openjdk@17/bin/jps from openjdk@17)
+  jrunscript (shadowed by /opt/homebrew/opt/openjdk@17/bin/jrunscript from openjdk@17)
+  jshell (shadowed by /opt/homebrew/opt/openjdk@17/bin/jshell from openjdk@17)
+  jstack (shadowed by /opt/homebrew/opt/openjdk@17/bin/jstack from openjdk@17)
+  jstat (shadowed by /opt/homebrew/opt/openjdk@17/bin/jstat from openjdk@17)
+  jstatd (shadowed by /opt/homebrew/opt/openjdk@17/bin/jstatd from openjdk@17)
+  keytool (shadowed by /opt/homebrew/opt/openjdk@17/bin/keytool from openjdk@17)
+  rmiregistry (shadowed by /opt/homebrew/opt/openjdk@17/bin/rmiregistry from openjdk@17)
+  serialver (shadowed by /opt/homebrew/opt/openjdk@17/bin/serialver from openjdk@17)
+Running these by name will not invoke the version provided by this formula.
+Run `brew link openjdk@21` to switch the active version to this keg.
+Disable this behaviour by setting `HOMEBREW_NO_PATH_SHADOW_CHECK=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).

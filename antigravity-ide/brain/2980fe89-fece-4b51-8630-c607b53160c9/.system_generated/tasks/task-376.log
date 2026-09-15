@@ -1,0 +1,36 @@
+  Geri yüklenecek projeler belirleniyor...
+  Geri yükleme için tüm projeler güncel.
+  BCSMS.Domain -> /Users/mervebilgin/BursaCityServiceManagement/backend/dotnet/src/BCSMS.Domain/bin/Debug/net8.0/BCSMS.Domain.dll
+  BCSMS.Application -> /Users/mervebilgin/BursaCityServiceManagement/backend/dotnet/src/BCSMS.Application/bin/Debug/net8.0/BCSMS.Application.dll
+  BCSMS.UnitTests -> /Users/mervebilgin/BursaCityServiceManagement/backend/dotnet/tests/BCSMS.UnitTests/bin/Debug/net8.0/BCSMS.UnitTests.dll
+  BCSMS.Infrastructure -> /Users/mervebilgin/BursaCityServiceManagement/backend/dotnet/src/BCSMS.Infrastructure/bin/Debug/net8.0/BCSMS.Infrastructure.dll
+  BCSMS.API -> /Users/mervebilgin/BursaCityServiceManagement/backend/dotnet/src/BCSMS.API/bin/Debug/net8.0/BCSMS.API.dll
+  BCSMS.IntegrationTests -> /Users/mervebilgin/BursaCityServiceManagement/backend/dotnet/tests/BCSMS.IntegrationTests/bin/Debug/net8.0/BCSMS.IntegrationTests.dll
+
+Oluşturma başarılı oldu.
+    0 Uyarı
+    0 Hata
+
+Geçen Süre 00:00:04.55
+  Geri yüklenecek projeler belirleniyor...
+  Geri yükleme için tüm projeler güncel.
+  BCSMS.Domain -> /Users/mervebilgin/BursaCityServiceManagement/backend/dotnet/src/BCSMS.Domain/bin/Debug/net8.0/BCSMS.Domain.dll
+  BCSMS.Application -> /Users/mervebilgin/BursaCityServiceManagement/backend/dotnet/src/BCSMS.Application/bin/Debug/net8.0/BCSMS.Application.dll
+  BCSMS.UnitTests -> /Users/mervebilgin/BursaCityServiceManagement/backend/dotnet/tests/BCSMS.UnitTests/bin/Debug/net8.0/BCSMS.UnitTests.dll
+  BCSMS.Infrastructure -> /Users/mervebilgin/BursaCityServiceManagement/backend/dotnet/src/BCSMS.Infrastructure/bin/Debug/net8.0/BCSMS.Infrastructure.dll
+/Users/mervebilgin/BursaCityServiceManagement/backend/dotnet/tests/BCSMS.UnitTests/bin/Debug/net8.0/BCSMS.UnitTests.dll (.NETCoreApp,Version=v8.0) için test çalıştırması
+VSTest sürümü 17.11.0 (arm64)
+
+Test yürütmesi başlatılıyor, lütfen bekleyin...
+Toplam 1 test dosyası belirtilen desenle eşleşti.
+  BCSMS.API -> /Users/mervebilgin/BursaCityServiceManagement/backend/dotnet/src/BCSMS.API/bin/Debug/net8.0/BCSMS.API.dll
+  BCSMS.IntegrationTests -> /Users/mervebilgin/BursaCityServiceManagement/backend/dotnet/tests/BCSMS.IntegrationTests/bin/Debug/net8.0/BCSMS.IntegrationTests.dll
+/Users/mervebilgin/BursaCityServiceManagement/backend/dotnet/tests/BCSMS.IntegrationTests/bin/Debug/net8.0/BCSMS.IntegrationTests.dll (.NETCoreApp,Version=v8.0) için test çalıştırması
+VSTest sürümü 17.11.0 (arm64)
+
+
+Başarılı!  - Başarısız:     0, Başarılı:    48, Atlanan:     0, Toplam:    48, Süre: 49 ms - BCSMS.UnitTests.dll (net8.0)
+Test yürütmesi başlatılıyor, lütfen bekleyin...
+Toplam 1 test dosyası belirtilen desenle eşleşti.
+
+Başarılı!  - Başarısız:     0, Başarılı:    28, Atlanan:     0, Toplam:    28, Süre: 987 ms - BCSMS.IntegrationTests.dll (net8.0)

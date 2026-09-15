@@ -1,0 +1,18 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    79  100    79    0     0    221      0 --:--:-- --:--:-- --:--:--   221
+HTTP/2 404 
+cache-control: public, max-age=0, must-revalidate
+content-type: text/plain; charset=utf-8
+date: Thu, 20 Aug 2026 13:34:26 GMT
+server: Vercel
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-vercel-error: NOT_FOUND
+x-vercel-id: fra1::9zlgd-1787232866737-aa05030f4f5f
+content-length: 79
+
+The page could not be found
+
+NOT_FOUND
+
+fra1::9zlgd-1787232866737-aa05030f4f5f
