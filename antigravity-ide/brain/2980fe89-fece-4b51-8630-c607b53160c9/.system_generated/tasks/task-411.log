@@ -1,5 +1,0 @@
-NAME        IMAGE                                        COMMAND                  SERVICE   CREATED             STATUS                       PORTS
-bcsms-api   bursacityservicemanagement-api               "dotnet BCSMS.API.dll"   api       About an hour ago   Up About an hour             0.0.0.0:5123->8080/tcp
-bcsms-db    mcr.microsoft.com/mssql/server:2022-latest   "/opt/mssql/bin/laun…"   db        About an hour ago   Up About an hour (healthy)   0.0.0.0:1433->1433/tcp
-bcsms-web   bursacityservicemanagement-web               "/docker-entrypoint.…"   web       About an hour ago   Up About an hour             0.0.0.0:3000->80/tcp
-Healthy

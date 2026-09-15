@@ -1,6 +1,0 @@
-1. Testing Frontend Web Server HTML response...
-   Frontend HTML loaded successfully!
-2. Testing Citizen Registration...
-Test error: Error: Registration failed: 500 {"title":"Internal Server Error","status":500,"detail":"An unexpected error occurred. Please try again later.","instance":"/api/auth/register"}
-    at test ([eval]:25:26)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)

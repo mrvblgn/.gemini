@@ -11,7 +11,7 @@ Projeyi tarayıcıda çalıştırmak için doğrudan `file://` ile açmak yerine
 1. **Terminal** uygulamasını açın.
 2. Proje dizinine geçin:
    ```bash
-   cd model-viewer-demo
+   cd /path/to/repository
    ```
 3. Python 3 ile yerel sunucuyu başlatın:
    ```bash
@@ -44,7 +44,7 @@ Projeyi tarayıcıda çalıştırmak için doğrudan `file://` ile açmak yerine
 
 1. İhraç edilen GLB dosyanızı bu projedeki `models/` klasörüne kopyalayın ve adını **`product.glb`** yapın:
    ```text
-   model-viewer-demo/models/product.glb
+   models/product.glb
    ```
 2. `index.html` dosyasını açın.
 3. İçerisindeki şu yorum satırını bulun:

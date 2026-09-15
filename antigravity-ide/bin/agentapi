@@ -1,2 +1,0 @@
-#!/bin/sh
-exec "/Applications/Antigravity IDE.app/Contents/Resources/app/extensions/antigravity/bin/language_server_macos_arm" agentapi "$@"

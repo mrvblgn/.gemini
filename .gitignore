@@ -1,0 +1,11 @@
+# Antigravity system & scratch directories
+antigravity/
+antigravity-ide/
+config/
+
+# OS / System files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log

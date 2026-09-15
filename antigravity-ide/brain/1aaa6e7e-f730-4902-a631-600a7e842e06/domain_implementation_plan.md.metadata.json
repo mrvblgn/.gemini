@@ -1,6 +1,0 @@
-{
-  "summary": "Revised Phase 2 domain implementation plan incorporating all 10 architectural decisions: Category as a data-driven entity (not enum), minimal BaseEntity (Id only, no global timestamps), role-based composition for users (no subclasses), encapsulated child entities in ServiceRequest aggregate, rich behavior methods with state machine guards, no WorkOrder/Assignment entities, attachment metadata only. Includes complete property and method signatures for every domain type.",
-  "updatedAt": "2026-08-19T12:16:58.172586Z",
-  "requestFeedback": true,
-  "userFacing": true
-}

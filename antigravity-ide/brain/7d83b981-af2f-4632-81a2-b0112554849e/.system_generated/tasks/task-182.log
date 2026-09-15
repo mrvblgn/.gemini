@@ -1,36 +1,0 @@
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0   774    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   774  100   774    0     0   1017      0 --:--:-- --:--:-- --:--:--  1017
-HTTP/2 200 
-accept-ranges: bytes
-access-control-allow-origin: *
-age: 0
-cache-control: public, max-age=0, must-revalidate
-content-disposition: inline; filename="index.html"
-content-type: text/html; charset=utf-8
-date: Thu, 20 Aug 2026 13:34:56 GMT
-etag: "e16fd7fbcce48ab0157fd6b9e97601a4"
-last-modified: Thu, 20 Aug 2026 13:34:56 GMT
-server: Vercel
-strict-transport-security: max-age=63072000; includeSubDomains; preload
-x-vercel-cache: MISS
-x-vercel-id: fra1::l7vlj-1787232895984-81263bd651b2
-content-length: 774
-
-<!doctype html>
-<html lang="tr">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bursa Büyükşehir Belediyesi — Hizmet ve Talep Yönetim Sistemi</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-Dqtgkn0l.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-B5q0QrFi.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
-</html>

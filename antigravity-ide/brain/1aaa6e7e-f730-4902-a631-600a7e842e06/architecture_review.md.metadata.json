@@ -1,5 +1,0 @@
-{
-  "summary": "Comprehensive structural architecture review of the BCSMS .NET solution covering: project-to-project references, Clean Architecture dependency direction verification, Domain isolation audit, NuGet package audit, .gitignore coverage analysis, docker-compose status, build results, and premature implementation review. All 9 checks passed with no issues found.",
-  "updatedAt": "2026-08-19T11:42:53.498121Z",
-  "userFacing": true
-}
