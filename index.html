@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Banyo Mobilyası & AR Görselleştirici - Model Viewer Demo</title>
+  <title>Belinza 3D Banyo Mobilyası & AR Görselleştirici</title>
   <meta name="description"
     content="Google model-viewer kütüphanesi ile 360 derece banyo mobilyası 3D ürün ve AR inceleme demosu.">
 
@@ -21,7 +21,7 @@
   <!-- Ana Uygulama Konteyneri -->
   <main class="app-container">
     <header class="app-header">
-      <h1>3D Banyo Mobilyası & AR İnceleme</h1>
+      <h1>Belinza 3D Banyo Mobilyası & AR İnceleme</h1>
       <p class="subtitle">Ürünü 360° incelemek için sürükleyin, yakınlaştırın veya ortamınızda görüntüleyin.</p>
     </header>
 
@@ -31,7 +31,7 @@
       <!-- Kendi modelin hazır olduğunda src değerini models/product.glb olarak değiştir. -->
       <model-viewer id="product-viewer" src="models/product.glb" alt="3D Banyo Mobilyası Modeli" camera-controls
         touch-action="pan-y" shadow-intensity="1" shadow-softness="0.8" exposure="1" loading="lazy" auto-rotate ar
-        ar-modes="webxr scene-viewer quick-look" ar-scale="auto" scale="0.1 0.1 0.1" ar-placement="floor"
+        ar-modes="webxr scene-viewer quick-look" ar-scale="auto" scale="1 1 1" ar-placement="floor"
         interaction-prompt="auto">
         <!-- Özel Türkçe AR Butonu (Yalnızca AR destekleyen cihazlarda JS ile gösterilir) -->
         <button slot="ar-button" id="ar-button" class="ar-button hidden" aria-label="Ürünü Banyonuzda Görün">
