@@ -32,18 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   // 1. YÜKLENME DURUMU (PROGRESS & LOAD)
   // ==========================================
-  viewer.addEventListener('progress', (event) => {
-    const progress = Math.round(event.detail.totalProgress * 100);
-    if (progressBarFill) progressBarFill.style.width = `${progress}%`;
-    if (progressText) progressText.textContent = `Model yükleniyor... %${progress}`;
-    
-    if (panelLoadStatus && progress < 100) {
-      panelLoadStatus.textContent = `Yükleniyor (%${progress})`;
-      panelLoadStatus.className = 'value badge badge-pending';
-    }
-  });
-
-  viewer.addEventListener('load', () => {
+  const handleLoadSuccess = () => {
     console.log('3D Model başarıyla yüklendi:', currentSrc);
 
     // Yükleme göstergesini gizle
@@ -55,9 +44,31 @@ document.addEventListener('DOMContentLoaded', () => {
       panelLoadStatus.className = 'value badge badge-success';
     }
 
-    // AR Desteğini model yüklendikten SONRA kontrol et (Düzeltme #4)
+    // AR Desteğini kontrol et
     checkARSupport();
+  };
+
+  viewer.addEventListener('progress', (event) => {
+    const progress = Math.round(event.detail.totalProgress * 100);
+    if (progressBarFill) progressBarFill.style.width = `${progress}%`;
+    if (progressText) progressText.textContent = `Model yükleniyor... %${progress}`;
+    
+    if (panelLoadStatus) {
+      if (progress >= 100 || viewer.loaded) {
+        handleLoadSuccess();
+      } else {
+        panelLoadStatus.textContent = `Yükleniyor (%${progress})`;
+        panelLoadStatus.className = 'value badge badge-pending';
+      }
+    }
   });
+
+  // Model zaten yüklenmişse (örneğin önbellekten hızlı yüklendiğinde load eventi kaçırıldıysa)
+  if (viewer.loaded) {
+    handleLoadSuccess();
+  } else {
+    viewer.addEventListener('load', handleLoadSuccess);
+  }
 
   // ==========================================
   // 2. HATA YÖNETİMİ (ERROR EVENT)
