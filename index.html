@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3D Banyo Mobilyası & AR Görselleştirici - Model Viewer Demo</title>
-  <meta name="description" content="Google model-viewer kütüphanesi ile 360 derece banyo mobilyası 3D ürün ve AR inceleme demosu.">
-  
+  <meta name="description"
+    content="Google model-viewer kütüphanesi ile 360 derece banyo mobilyası 3D ürün ve AR inceleme demosu.">
+
   <!-- CSS Dosyası -->
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Google model-viewer (v4.1.0 ES Module - Resmi Güncel CDN) -->
-  <script
-    type="module"
-    src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js">
   </script>
 </head>
+
 <body>
 
   <!-- Ana Uygulama Konteyneri -->
@@ -26,30 +27,18 @@
 
     <!-- 3D Görselleştirici Alanı -->
     <section class="viewer-container" aria-label="3D Ürün Modeli Görselleştirici">
-      
+
       <!-- Kendi modelin hazır olduğunda src değerini models/product.glb olarak değiştir. -->
-      <model-viewer
-        id="product-viewer"
-        src="models/product.glb"
-        alt="3D Banyo Mobilyası Modeli"
-        camera-controls
-        touch-action="pan-y"
-        shadow-intensity="1"
-        shadow-softness="0.8"
-        exposure="1"
-        loading="lazy"
-        auto-rotate
-        ar
-        ar-modes="webxr scene-viewer quick-look"
-        ar-scale="auto"
-        ar-placement="floor"
-        interaction-prompt="auto"
-      >
+      <model-viewer id="product-viewer" src="models/product.glb" alt="3D Banyo Mobilyası Modeli" camera-controls
+        touch-action="pan-y" shadow-intensity="1" shadow-softness="0.8" exposure="1" loading="lazy" auto-rotate ar
+        ar-modes="webxr scene-viewer quick-look" ar-scale="auto" scale="0.1 0.1 0.1" ar-placement="floor"
+        interaction-prompt="auto">
         <!-- Özel Türkçe AR Butonu (Yalnızca AR destekleyen cihazlarda JS ile gösterilir) -->
         <button slot="ar-button" id="ar-button" class="ar-button hidden" aria-label="Ürünü Banyonuzda Görün">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1"/>
-            <rect x="7" y="7" width="10" height="10" rx="2"/>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1" />
+            <rect x="7" y="7" width="10" height="10" rx="2" />
           </svg>
           <span>Banyonuzda Gör</span>
         </button>
@@ -68,14 +57,8 @@
         <!-- ÖRNEK HOTSPOT / ANNOTATION 1 (Seramik lavabo) -->
         <!-- NOT: Aşağıdaki position ve normal koordinatları örnek Chair.glb modeline göre ayarlanmıştır. -->
         <!-- Kendi models/product.glb modelinizi eklediğinizde koordinatları model-viewer Editor kullanarak güncelleyin. -->
-        <button
-          class="hotspot"
-          slot="hotspot-1"
-          data-position="0m 0.75m 0.05m"
-          data-normal="0m 1m 0m"
-          data-visibility-attribute="visible"
-          aria-label="Seramik lavabo detay bilgisi"
-        >
+        <button class="hotspot" slot="hotspot-1" data-position="0m 0.75m 0.05m" data-normal="0m 1m 0m"
+          data-visibility-attribute="visible" aria-label="Seramik lavabo detay bilgisi">
           <div class="hotspot-dot"></div>
           <div class="hotspot-label">
             <strong>Seramik Lavabo</strong>
@@ -85,14 +68,8 @@
 
         <!-- ÖRNEK HOTSPOT / ANNOTATION 2 (Frenli çekmece) -->
         <!-- NOT: Koordinatlar örnek modele aittir. -->
-        <button
-          class="hotspot"
-          slot="hotspot-2"
-          data-position="0m 0.4m 0.22m"
-          data-normal="0m 0m 1m"
-          data-visibility-attribute="visible"
-          aria-label="Frenli çekmece detay bilgisi"
-        >
+        <button class="hotspot" slot="hotspot-2" data-position="0m 0.4m 0.22m" data-normal="0m 0m 1m"
+          data-visibility-attribute="visible" aria-label="Frenli çekmece detay bilgisi">
           <div class="hotspot-dot"></div>
           <div class="hotspot-label">
             <strong>Frenli Çekmece</strong>
@@ -105,9 +82,9 @@
       <!-- Türkçe Hata Mesajı Alanı -->
       <div id="error-message" class="error-message hidden" role="alert">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="8" x2="12" y2="12"/>
-          <line x1="12" y1="16" x2="12.01" y2="16"/>
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="8" x2="12" y2="12" />
+          <line x1="12" y1="16" x2="12.01" y2="16" />
         </svg>
         <span>Model yüklenirken bir sorun oluştu. Lütfen dosya yolunu ve internet bağlantınızı kontrol ediniz.</span>
       </div>
@@ -119,7 +96,8 @@
       <div class="notice-icon">ℹ️</div>
       <div class="notice-content">
         <strong id="ar-notice-title">AR (Artırılmış Gerçeklik) Bilgilendirmesi</strong>
-        <p id="ar-notice-desc">AR özelliği uyumlu mobil cihazlarda (Android WebXR / iOS Quick Look) aktiftir. Masaüstü tarayıcılarda model 360° ve 3D olarak incelenebilir.</p>
+        <p id="ar-notice-desc">AR özelliği uyumlu mobil cihazlarda (Android WebXR / iOS Quick Look) aktiftir. Masaüstü
+          tarayıcılarda model 360° ve 3D olarak incelenebilir.</p>
       </div>
     </section>
 
@@ -148,4 +126,5 @@
   <!-- JavaScript Dosyası -->
   <script src="js/app.js"></script>
 </body>
+
 </html>
